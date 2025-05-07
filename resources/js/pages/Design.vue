@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useColors } from '@/composables/useColors';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
@@ -9,6 +10,8 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: '/design-pattern',
     },
 ];
+
+const { colors } = useColors();
 </script>
 
 <template>
@@ -16,11 +19,12 @@ const breadcrumbs: BreadcrumbItem[] = [
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="grid h-fit w-full grid-cols-4 gap-4 px-8">
-            <div class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+            <!-- Start Typography Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
                 <div class="text-head uppercase">typography</div>
                 <div class="text-subhead">A scalable, consistent text style guide ensuring clarity, hierarchy, and readability across the UI.</div>
                 <hr class="mt-6 mb-2" />
-                <div class="text-callout uppercase opacity-50 mb-4">Primary Typeface</div>
+                <div class="text-callout mb-4 uppercase opacity-50">Primary Typeface</div>
                 <div class="text-title mb-4">JF Flate</div>
                 <div class="mb-6 grid grid-cols-4 gap-4">
                     <div class="rounded-xl border-1 p-4">
@@ -39,7 +43,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     </div>
                 </div>
                 <hr class="mt-4 mb-2" />
-                <div class="text-callout uppercase opacity-50 mb-4">More Typefaces</div>
+                <div class="text-callout mb-4 uppercase opacity-50">More Typefaces</div>
                 <div class="text-title mb-4">Changa</div>
                 <div class="mb-6 grid grid-cols-4 gap-4">
                     <div class="rounded-xl border-1 p-4">
@@ -93,7 +97,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     </div>
                 </div>
                 <hr class="mt-4 mb-2" />
-                <div class="text-callout uppercase opacity-50 mb-4">hierarchy</div>
+                <div class="text-callout mb-4 uppercase opacity-50">hierarchy</div>
                 <table class="min-w-full table-auto text-left text-sm">
                     <thead>
                         <tr class="bg-gray-200 text-black">
@@ -166,13 +170,13 @@ const breadcrumbs: BreadcrumbItem[] = [
                 <hr class="mt-4 mb-2" />
                 <div class="grid grid-cols-3 gap-4">
                     <div>
-                        <div class="text-callout uppercase opacity-50 mb-4">Font Style Format</div>
+                        <div class="text-callout mb-4 uppercase opacity-50">Font Style Format</div>
                         <div>Hybrid Tailwind Approach</div>
                         <div class="text-small-callout">Utility-First CSS / Atomic CSS</div>
                         <div class="text-small-callout">Tailwind Preset / Theme-Based Tokens</div>
                     </div>
                     <div>
-                        <div class="text-callout uppercase opacity-50 mb-4">Colors</div>
+                        <div class="text-callout mb-4 uppercase opacity-50">Colors</div>
                         <div class="grid grid-cols-2">
                             <div>Black</div>
                             <div>--black</div>
@@ -196,22 +200,174 @@ const breadcrumbs: BreadcrumbItem[] = [
                         </div>
                     </div>
                     <div>
-                        <div class="text-callout uppercase opacity-50 mb-4">Font Style Format</div>
+                        <div class="text-callout mb-4 uppercase opacity-50">Font Style Format</div>
                         <div>Left</div>
                         <div>Center</div>
                         <div>Right</div>
                     </div>
                 </div>
                 <hr class="mt-4 mb-2" />
-                <div class="text-callout uppercase opacity-50 mb-4">Example</div>
+                <div class="text-callout mb-4 uppercase opacity-50">Example</div>
                 <div class="rounded-2xl bg-white p-6 shadow-md dark:bg-gray-800">
-                    <h2 class="mb-2 text-subhead font-bold text-gray-900 dark:text-white">Getting Started</h2>
+                    <h2 class="text-subhead mb-2 font-bold text-gray-900 dark:text-white">Getting Started</h2>
                     <p class="mb-4 text-[0.875rem] leading-relaxed text-gray-700 dark:text-gray-300">
                         This card demonstrates the typography system you're building with Tailwind and custom tokens.
                     </p>
                     <div class="text-[0.75rem] text-gray-500 dark:text-gray-400">Last updated: <span class="font-semibold">May 7, 2025</span></div>
                 </div>
-            </div>
+            </section>
+            <!-- End Typography Section -->
+
+            <!-- Start Color Palette Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Color Palette</div>
+                <div class="text-subhead">
+                    It includes brand colors, neutral tones, and semantic roles (such as success, warning, and error) to ensure clarity,
+                    accessibility, and cohesive design throughout the interface
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Colors</div>
+                <div class="grid grid-cols-8">
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.green }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-red mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.red }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="mb-2 h-30 w-20 rounded-full bg-black"></div>
+                        <div>{{ colors.black }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-gray mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.gray }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="border-gray mb-2 h-30 w-20 rounded-full border bg-white"></div>
+                        <div>{{ colors.white }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-yallow mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.yallow }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-orange mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.orange }}</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-blue mb-2 h-30 w-20 rounded-full"></div>
+                        <div>{{ colors.blue }}</div>
+                    </div>
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Color Transparency</div>
+                <div class="grid grid-cols-8">
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full opacity-15"></div>
+                        <div>15%</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full opacity-25"></div>
+                        <div>25%</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full opacity-50"></div>
+                        <div>50%</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full opacity-75"></div>
+                        <div>75%</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="bg-green mb-2 h-30 w-20 rounded-full"></div>
+                        <div>100%</div>
+                    </div>
+                    <div class="item-center col-span-3 flex flex-col justify-center">
+                        This is the transparency percentage of the colors used and applies to all colors.
+                    </div>
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Colors</div>
+                <table class="w-full table-fixed text-sm">
+                    <thead>
+                        <tr class="border-b text-left">
+                            <th class="w-1/3 py-2">Color Use</th>
+                            <th class="w-1/3 py-2">Light Mode</th>
+                            <th class="w-1/3 py-2">Dark Mode</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="py-3">Primary</td>
+                            <td><div class="bg-green h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Secondary</td>
+                            <td><div class="bg-red h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Background</td>
+                            <td><div class="border-muted h-5 w-5 rounded-full border bg-white"></div></td>
+                            <td><div class="h-5 w-5 rounded-full bg-black"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Foreground</td>
+                            <td><div class="h-5 w-5 rounded-full bg-black"></div></td>
+                            <td><div class="border-muted h-5 w-5 rounded-full border bg-white"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Surface</td>
+                            <td><div class="bg-gray h-5 w-5 rounded-full"></div></td>
+                            <td><div class="h-5 w-5 rounded-full bg-black"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Text</td>
+                            <td><div class="bg-text h-5 w-5 rounded-full"></div></td>
+                            <td><div class="border-muted h-5 w-5 rounded-full border bg-white"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Accent</td>
+                            <td><div class="bg-green h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Muted</td>
+                            <td><div class="h-5 w-5 rounded-full bg-black"></div></td>
+                            <td><div class="bg-muted h-5 w-5 rounded-full"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Destructive</td>
+                            <td><div class="bg-destructive h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Success</td>
+                            <td><div class="bg-success h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Error</td>
+                            <td><div class="bg-error h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Warning</td>
+                            <td><div class="bg-warning h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Info</td>
+                            <td><div class="bg-info h-5 w-5 rounded-full"></div></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- End Color Palette Section -->
         </div>
     </AppLayout>
 </template>

@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,169 +8,219 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans:
-    var(--font-type), Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        var(--font-type), Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
 
-  --text-title-size: var(--font-size-title);
-  --text-head-size: var(--font-size-head);
-  --text-subhead-size: var(--font-size-subhead);
-  --text-body-size: var(--font-size-body);
-  --text-callout-size: var(--font-size-callout);
-  --text-small-callout-size: var(--font-size-small-callout);
-  --text-caption-size: var(--font-size-caption);
-  --text-small-caption-size: var(--font-size-small-caption);
+    --text-title-size: var(--font-size-title);
+    --text-head-size: var(--font-size-head);
+    --text-subhead-size: var(--font-size-subhead);
+    --text-body-size: var(--font-size-body);
+    --text-callout-size: var(--font-size-callout);
+    --text-small-callout-size: var(--font-size-small-callout);
+    --text-caption-size: var(--font-size-caption);
+    --text-small-caption-size: var(--font-size-small-caption);
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+    --color-green: var(--color-brand-green);
+    --color-red: var(--color-brand-red);
+    --color-black: var(--color-brand-black);
+    --color-white: var(--color-brand-white);
+    --color-gray: var(--color-brand-gray);
+    --color-orange: var(--color-brand-orange);
+    --color-yallow: var(--color-brand-yallow);
+    --color-blue: var(--color-brand-blue);
+    --color-primary: var(--color-brand-primary);
+    --color-secondary: var(--color-brand-secondary);
+    --color-background: var(--color-brand-background);
+    --color-foreground: var(--color-brand-foreground);
+    --color-surface: var(--color-brand-surface);
+    --color-text: var(--color-brand-text);
+    --color-accent: var(--color-brand-accent);
+    --color-muted: var(--color-brand-muted);
+    --color-destructive: var(--color-brand-destructive);
+    --color-success: var(--color-brand-success);
+    --color-error: var(--color-brand-error);
+    --color-warning: var(--color-brand-warning);
+    --color-info: var(--color-brand-info);
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+    --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+    --color-muted-foreground: var(--muted-foreground);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+    --color-accent-foreground: var(--accent-foreground);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+    --color-destructive-foreground: var(--destructive-foreground);
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
 
-  --color-sidebar: var(--sidebar-background);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Typography Scale
  * Defines custom font-size variables based on a typographic hierarchy
  * Using rem units instead of px for better scalability and responsiveness
  * Allows centralized control via the root font size
  * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
  * ------------------------------------------------------------ */
-  --font-type: JF Flate;
+    --font-type: JF Flate;
 
-  --font-size-title: 1.5rem;
-  /* 24px */
-  --font-size-head: 1.25rem;
-  /* 20px */
-  --font-size-subhead: 1rem;
-  /* 16px */
-  --font-size-body: 0.875rem;
-  /* 14px */
-  --font-size-callout: 0.875rem;
-  /* 14px */
-  --font-size-small-callout: 0.75rem;
-  /* 12px */
-  --font-size-caption: 0.75rem;
-  /* 12px */
-  --font-size-small-caption: 0.625rem;
-  /* 10px */
+    --font-size-title: 1.5rem;
+    /* 24px */
+    --font-size-head: 1.25rem;
+    /* 20px */
+    --font-size-subhead: 1rem;
+    /* 16px */
+    --font-size-body: 0.875rem;
+    /* 14px */
+    --font-size-callout: 0.875rem;
+    /* 14px */
+    --font-size-small-callout: 0.75rem;
+    /* 12px */
+    --font-size-caption: 0.75rem;
+    /* 12px */
+    --font-size-small-caption: 0.625rem;
+    /* 10px */
 
+    /* ------------------------------------------------------------
+* Color Palette
+* Defines the core color variables for the design system
+* Enables consistent and centralized usage of colors across the UI
+* All values use HEX for clarity and flexibility
+* ------------------------------------------------------------ */
 
+    --color-brand-green: #9ada1b;
+    --color-brand-red: #ff3c00;
+    --color-brand-black: #33363a;
+    --color-brand-white: #fff;
+    --color-brand-gray: #f4f5f9;
+    --color-brand-blue: #009edd;
+    --color-brand-yallow: #ffc009;
+    --color-brand-orange: #ff5e00;
 
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --primary: hsl(0 0% 9%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(0 0% 92.1%);
-  --secondary-foreground: hsl(0 0% 9%);
-  --muted: hsl(0 0% 96.1%);
-  --muted-foreground: hsl(0 0% 45.1%);
-  --accent: hsl(0 0% 96.1%);
-  --accent-foreground: hsl(0 0% 9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 92.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(0 0% 3.9%);
-  --chart-1: hsl(12 76% 61%);
-  --chart-2: hsl(173 58% 39%);
-  --chart-3: hsl(197 37% 24%);
-  --chart-4: hsl(43 74% 66%);
-  --chart-5: hsl(27 87% 67%);
-  --radius: 0.5rem;
-  --sidebar-background: hsl(0 0% 98%);
-  --sidebar-foreground: hsl(240 5.3% 26.1%);
-  --sidebar-primary: hsl(0 0% 10%);
-  --sidebar-primary-foreground: hsl(0 0% 98%);
-  --sidebar-accent: hsl(0 0% 94%);
-  --sidebar-accent-foreground: hsl(0 0% 30%);
-  --sidebar-border: hsl(0 0% 91%);
-  --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar: hsl(0 0% 98%);
+    --color-brand-primary: var(--color-brand-green);
+    --color-brand-secondary: var(--color-brand-red);
+    --color-brand-background: var(--color-brand-white);
+    --color-brand-foreground: var(--color-brand-black);
+    --color-brand-surface: var(--color-brand-gray);
+    --color-brand-text: var(--color-brand-black);
+    --color-brand-accent: var(--color-brand-green);
+    --color-brand-muted: color-mix(in srgb, var(--color-brand-black) 30%, transparent);
+    --color-brand-destructive: var(--color-brand-red);
+    --color-brand-success: var(--color-brand-green);
+    --color-brand-error: var(--color-brand-orange);
+    --color-brand-warning: var(--color-brand-yallow);
+    --color-brand-info: var(--color-brand-blue);
 
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 3.9%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(0 0% 3.9%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(0 0% 3.9%);
+    --primary: hsl(0 0% 9%);
+    --primary-foreground: hsl(0 0% 98%);
+    --secondary: hsl(0 0% 92.1%);
+    --secondary-foreground: hsl(0 0% 9%);
+    --muted: hsl(0 0% 96.1%);
+    --muted-foreground: hsl(0 0% 45.1%);
+    --accent: hsl(0 0% 96.1%);
+    --accent-foreground: hsl(0 0% 9%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 92.8%);
+    --input: hsl(0 0% 89.8%);
+    --ring: hsl(0 0% 3.9%);
+    --chart-1: hsl(12 76% 61%);
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+    --radius: 0.5rem;
+    --sidebar-background: hsl(0 0% 98%);
+    --sidebar-foreground: hsl(240 5.3% 26.1%);
+    --sidebar-primary: hsl(0 0% 10%);
+    --sidebar-primary-foreground: hsl(0 0% 98%);
+    --sidebar-accent: hsl(0 0% 94%);
+    --sidebar-accent-foreground: hsl(0 0% 30%);
+    --sidebar-border: hsl(0 0% 91%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --sidebar: hsl(0 0% 98%);
 }
 
 .dark {
-  --background: hsl(0 0% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(0 0% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(0 0% 3.9%);
-  --popover-foreground: 0 0% 98%;
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(0 0% 9%);
-  --secondary: hsl(0 0% 14.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(0 0% 16.08%);
-  --muted-foreground: hsl(0 0% 63.9%);
-  --accent: hsl(0 0% 14.9%);
-  --accent-foreground: hsl(0 0% 98%);
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 14.9%);
-  --input: hsl(0 0% 14.9%);
-  --ring: hsl(0 0% 83.1%);
-  --chart-1: hsl(220 70% 50%);
-  --chart-2: hsl(160 60% 45%);
-  --chart-3: hsl(30 80% 55%);
-  --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%);
-  --sidebar-background: hsl(0 0% 7%);
-  --sidebar-foreground: hsl(0 0% 95.9%);
-  --sidebar-primary: hsl(360, 100%, 100%);
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(0 0% 15.9%);
-  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-border: hsl(0 0% 15.9%);
-  --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar:
-    hsl(240 5.9% 10%);
+    /* ------------------------------------------------------------
+    * Color Palette Dark
+    * Defines the core color variables for the design system
+    * Enables consistent and centralized usage of colors across the UI
+    * All values use HEX for clarity and flexibility
+    * ------------------------------------------------------------ */
+    --color-brand-background: var(--color-black);
+    --color-brand-foreground: var(--color-gray);
+    --color-brand-surface: color-mix(in srgb, var(--color-black) 30%, transparent);
+    --color-brand-text: var(--color-white);
+
+    --background: hsl(0 0% 3.9%);
+    --foreground: hsl(0 0% 98%);
+    --card: hsl(0 0% 3.9%);
+    --card-foreground: hsl(0 0% 98%);
+    --popover: hsl(0 0% 3.9%);
+    --popover-foreground: 0 0% 98%;
+    --primary: hsl(0 0% 98%);
+    --primary-foreground: hsl(0 0% 9%);
+    --secondary: hsl(0 0% 14.9%);
+    --secondary-foreground: hsl(0 0% 98%);
+    --muted: hsl(0 0% 16.08%);
+    --muted-foreground: hsl(0 0% 63.9%);
+    --accent: hsl(0 0% 14.9%);
+    --accent-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 14.9%);
+    --input: hsl(0 0% 14.9%);
+    --ring: hsl(0 0% 83.1%);
+    --chart-1: hsl(220 70% 50%);
+    --chart-2: hsl(160 60% 45%);
+    --chart-3: hsl(30 80% 55%);
+    --chart-4: hsl(280 65% 60%);
+    --chart-5: hsl(340 75% 55%);
+    --sidebar-background: hsl(0 0% 7%);
+    --sidebar-foreground: hsl(0 0% 95.9%);
+    --sidebar-primary: hsl(360, 100%, 100%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(0 0% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(0 0% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --sidebar: hsl(240 5.9% 10%);
 }
 
 /*
@@ -182,118 +232,119 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  @font-face {
-    font-family: JF Flate;
-    font-style: normal;
-    font-display: swap;
-    src: local('JfFlate'), url(../fonts/jflate/regular.ttf) format('truetype');
-  }
+    @font-face {
+        font-family: JF Flate;
+        font-style: normal;
+        font-display: swap;
+        src:
+            local('JfFlate'),
+            url(../fonts/jflate/regular.ttf) format('truetype');
+    }
 
-  @font-face {
-    font-family: Changa;
-    font-style: normal;
-    font-weight: 200 700;
-    font-display: swap;
-    src: local('changa'), url(../fonts/changa/changa-variable-font.ttf) format("truetype");
-  }
+    @font-face {
+        font-family: Changa;
+        font-style: normal;
+        font-weight: 200 700;
+        font-display: swap;
+        src:
+            local('changa'),
+            url(../fonts/changa/changa-variable-font.ttf) format('truetype');
+    }
 
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 
-  * {
-    @apply border-border outline-ring/50;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
 
-  body {
-    @apply font-sans bg-background text-foreground;
-  }
+    body {
+        @apply bg-background text-foreground font-sans;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Title (Main Title)
  * Weight: **Bold**
  * Usage: The main title of the page or section.
  */
-  .text-title {
-    @apply text-title-size font-extrabold;
-  }
+    .text-title {
+        @apply text-title-size font-extrabold;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Head (Secondary Heading)
  * Weight: **Semi-Bold**
  * Usage: Subheadings under the main title.
  */
-  .text-head {
-    @apply text-head-size font-bold;
-  }
+    .text-head {
+        @apply text-head-size font-bold;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Subhead (Subheading)
  * Weight: **Medium**
  * Usage: Subheadings that break down sections within the content.
  */
-  .text-subhead {
-    @apply text-subhead-size font-medium;
-  }
+    .text-subhead {
+        @apply text-subhead-size font-medium;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Body (Main Body Text)
  * Weight: **Regular**
  * Usage: The primary content text in articles or information pages.
  */
-  .text-body {
-    @apply text-body-size font-normal;
-  }
+    .text-body {
+        @apply text-body-size font-normal;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Callout (Highlighted Text)
  * Weight: **Medium**
  * Usage: Important or highlighted text that needs attention.
  */
-  .text-callout {
-    @apply text-callout-size font-medium;
-  }
+    .text-callout {
+        @apply text-callout-size font-medium;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Small Callout (Small Highlighted Text)
  * Weight: **Regular**
  * Usage: Small but important notes or alerts.
  */
-  .text-small-callout {
-    @apply text-small-callout-size font-normal;
-  }
+    .text-small-callout {
+        @apply text-small-callout-size font-normal;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Caption (Caption for Images/Illustrations)
  * Weight: **Light**
  * Usage: Descriptive text for images or illustrations.
  */
-  .text-caption {
-    @apply text-caption-size font-light;
-  }
+    .text-caption {
+        @apply text-caption-size font-light;
+    }
 
-  /* ------------------------------------------------------------
+    /* ------------------------------------------------------------
  * Small Caption (Very Small Caption)
  * Weight: **Light**
  * Usage: Very small descriptive text, often for fine details.
  */
-  .text-small-caption {
-    @apply text-small-caption-size font-extralight;
-  }
-
+    .text-small-caption {
+        @apply text-small-caption-size font-extralight;
+    }
 }
 
 @layer utilities {
-
-  body,
-  html {
-    --font-sans:
-      'JF Flat', ui-sans-serif, system-ui, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji', 'Instrument Sans';
-  }
+    body,
+    html {
+        --font-sans:
+            'JF Flat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji',
+            'Instrument Sans';
+    }
 }
