@@ -9,8 +9,17 @@
 
 @theme inline {
   --font-sans:
-    Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    var(--font-type), Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --text-title-size: var(--font-size-title);
+  --text-head-size: var(--font-size-head);
+  --text-subhead-size: var(--font-size-subhead);
+  --text-body-size: var(--font-size-body);
+  --text-callout-size: var(--font-size-callout);
+  --text-small-callout-size: var(--font-size-small-callout);
+  --text-caption-size: var(--font-size-caption);
+  --text-small-caption-size: var(--font-size-small-caption);
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -60,35 +69,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
-@layer utilities {
-  body,
-  html {
-    --font-sans:
-      'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
-  }
-}
-
 :root {
+
+  /* ------------------------------------------------------------
+ * Typography Scale
+ * Defines custom font-size variables based on a typographic hierarchy
+ * Using rem units instead of px for better scalability and responsiveness
+ * Allows centralized control via the root font size
+ * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
+ * ------------------------------------------------------------ */
+  --font-type: JF Flate;
+
+  --font-size-title: 1.5rem;
+  /* 24px */
+  --font-size-head: 1.25rem;
+  /* 20px */
+  --font-size-subhead: 1rem;
+  /* 16px */
+  --font-size-body: 0.875rem;
+  /* 14px */
+  --font-size-callout: 0.875rem;
+  /* 14px */
+  --font-size-small-callout: 0.75rem;
+  /* 12px */
+  --font-size-caption: 0.75rem;
+  /* 12px */
+  --font-size-small-caption: 0.625rem;
+  /* 10px */
+
+
+
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
   --card: hsl(0 0% 100%);
@@ -122,8 +132,8 @@
   --sidebar-accent-foreground: hsl(0 0% 30%);
   --sidebar-border: hsl(0 0% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar:
-    hsl(0 0% 98%);
+  --sidebar: hsl(0 0% 98%);
+
 }
 
 .dark {
@@ -163,25 +173,127 @@
     hsl(240 5.9% 10%);
 }
 
-@layer base {
-    * {
-        @apply border-border;
-    }
-
-    body {
-        @apply bg-background text-foreground;
-    }
-}
-
 /*
-  ---break---
-*/
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+  @font-face {
+    font-family: JF Flate;
+    font-style: normal;
+    font-display: swap;
+    src: local('JfFlate'), url(../fonts/jflate/regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: Changa;
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: local('changa'), url(../fonts/changa/changa-variable-font.ttf) format("truetype");
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply font-sans bg-background text-foreground;
+  }
+
+  /* ------------------------------------------------------------
+ * Title (Main Title)
+ * Weight: **Bold**
+ * Usage: The main title of the page or section.
+ */
+  .text-title {
+    @apply text-title-size font-extrabold;
+  }
+
+  /* ------------------------------------------------------------
+ * Head (Secondary Heading)
+ * Weight: **Semi-Bold**
+ * Usage: Subheadings under the main title.
+ */
+  .text-head {
+    @apply text-head-size font-bold;
+  }
+
+  /* ------------------------------------------------------------
+ * Subhead (Subheading)
+ * Weight: **Medium**
+ * Usage: Subheadings that break down sections within the content.
+ */
+  .text-subhead {
+    @apply text-subhead-size font-medium;
+  }
+
+  /* ------------------------------------------------------------
+ * Body (Main Body Text)
+ * Weight: **Regular**
+ * Usage: The primary content text in articles or information pages.
+ */
+  .text-body {
+    @apply text-body-size font-normal;
+  }
+
+  /* ------------------------------------------------------------
+ * Callout (Highlighted Text)
+ * Weight: **Medium**
+ * Usage: Important or highlighted text that needs attention.
+ */
+  .text-callout {
+    @apply text-callout-size font-medium;
+  }
+
+  /* ------------------------------------------------------------
+ * Small Callout (Small Highlighted Text)
+ * Weight: **Regular**
+ * Usage: Small but important notes or alerts.
+ */
+  .text-small-callout {
+    @apply text-small-callout-size font-normal;
+  }
+
+  /* ------------------------------------------------------------
+ * Caption (Caption for Images/Illustrations)
+ * Weight: **Light**
+ * Usage: Descriptive text for images or illustrations.
+ */
+  .text-caption {
+    @apply text-caption-size font-light;
+  }
+
+  /* ------------------------------------------------------------
+ * Small Caption (Very Small Caption)
+ * Weight: **Light**
+ * Usage: Very small descriptive text, often for fine details.
+ */
+  .text-small-caption {
+    @apply text-small-caption-size font-extralight;
+  }
+
+}
+
+@layer utilities {
+
+  body,
+  html {
+    --font-sans:
+      'JF Flat', ui-sans-serif, system-ui, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji', 'Instrument Sans';
   }
 }
