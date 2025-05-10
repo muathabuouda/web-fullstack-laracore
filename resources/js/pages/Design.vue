@@ -498,27 +498,27 @@ const { colors } = useColors();
                         <tr class="even:bg-gray-50">
                             <td class="px-4 py-2 font-medium text-gray-900">Sphone</td>
                             <td class="px-4 py-2 text-gray-600">sphone:*</td>
-                            <td class="px-4 py-2 text-gray-600">>= 395</td>
+                            <td class="px-4 py-2 text-gray-600">{{'>= 395'}}</td>
                         </tr>
                         <tr class="even:bg-gray-50">
                             <td class="px-4 py-2 font-medium text-gray-900">Phone</td>
                             <td class="px-4 py-2 text-gray-600">phone:*</td>
-                            <td class="px-4 py-2 text-gray-600"><=360</td>
+                            <td class="px-4 py-2 text-gray-600">{{'<=360'}}</td>
                         </tr>
                         <tr class="even:bg-gray-50">
                             <td class="px-4 py-2 font-medium text-gray-900">Tablet</td>
                             <td class="px-4 py-2 text-gray-600">tablet:*</td>
-                            <td class="px-4 py-2 text-gray-600"><=640</td>
+                            <td class="px-4 py-2 text-gray-600">{{'<=640'}}</td>
                         </tr>
                         <tr class="even:bg-gray-50">
                             <td class="px-4 py-2 font-medium text-gray-900">Laptop</td>
                             <td class="px-4 py-2 text-gray-600">laptop:*</td>
-                            <td class="px-4 py-2 text-gray-600"><=1024</td>
+                            <td class="px-4 py-2 text-gray-600">{{'<=1024'}}</td>
                         </tr>
                         <tr class="even:bg-gray-50">
                             <td class="px-4 py-2 font-medium text-gray-900">Desktop</td>
                             <td class="px-4 py-2 text-gray-600">desktop:*</td>
-                            <td class="px-4 py-2 text-gray-600"><=1280</td>
+                            <td class="px-4 py-2 text-gray-600">{{'<=1280'}}</td>
                         </tr>
                     </tbody>
                 </table>
