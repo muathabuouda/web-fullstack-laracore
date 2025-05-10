@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,56 +8,224 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans:
-    Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    /* ------------------------------------------------------------
+    * Typography Scale
+    * Defines custom font-size variables based on a typographic hierarchy
+    * Using rem units instead of px for better scalability and responsiveness
+    * Allows centralized control via the root font size
+    * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
+    * ------------------------------------------------------------ */
+    --font-sans:
+        JF Flate, Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+    --text-title-size: 1.5rem; /* 24px */
+    --text-head-size: 1.25rem; /* 20px */
+    --text-subhead-size: 1rem; /* 16px */
+    --text-body-size: 0.875rem; /* 14px */
+    --text-callout-size: 0.875rem; /* 14px */
+    --text-small-callout-size: 0.75rem; /* 12px */
+    --text-caption-size: 0.75rem; /* 12px */
+    --text-small-caption-size: 0.625rem; /* 10px */
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    /* ------------------------------------------------------------
+    * Color Palette
+    * Defines the primary and secondary color variables for the UI
+    * Provides a unified color system for branding, components, and states
+    * Organized by functional roles (e.g., primary, success, warning, error)
+    * All colors are defined using HEX codes for consistency and control
+    * ------------------------------------------------------------ */
+    --color-green: #9ada1b;
+    --color-red: #ff3c00;
+    --color-black: #33363a;
+    --color-white: #fff;
+    --color-gray: #f4f5f9;
+    --color-orange: #ff5e00;
+    --color-yallow: #ffc009;
+    --color-blue: #009edd;
+    --color-primary: var(--color-green);
+    --color-secondary: var(--color-red);
+    --color-background: var(--color-brand-background);
+    --color-foreground: var(--color-brand-foreground);
+    --color-surface: var(--color-brand-surface);
+    --color-text: var(--color-brand-text);
+    --color-accent: var(--color-green);
+    --color-muted: var(--color-brand-muted);
+    --color-destructive: var(--color-red);
+    --color-success: var(--color-green);
+    --color-error: var(--color-orange);
+    --color-warning: var(--color-yallow);
+    --color-info: var(--color-blue);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+    /* ------------------------------------------------------------
+    * Spacing & Sizing Scale
+    * Defines the core spacing and sizing variables for the design system
+    * Enables consistent layout, padding, margins, raduis and element sizing across the UI
+    * All values are based on a 4px unit and expressed in rem for scalability
+    * ------------------------------------------------------------ */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 0.75rem; /* 12px */
+    --spacing-base: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 2.5rem; /* 40px */
+    --spacing-3xl: 3.5rem; /* 56px */
+    --spacing-4xl: 4rem; /* 64px */
+    --spacing-5xl: 8rem; /* 128px */
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+    /* ------------------------------------------------------------
+    * Responsive Breakpoints
+    * Defines the core screen size categories used in the design system
+    * Enables adaptive and responsive layouts across different device types
+    * The breakpoints are named semantically (not numerically) for clarity
+    * and are based on common device widths to ensure a consistent UX
+    * ------------------------------------------------------------
+    *
+    * sphone  - Small Phones (>= 359px)      → e.g. iPhone SE
+    * phone   - Standard Phones (≤ 360px)   → e.g. iPhone 14, Android
+    * tablet  - Tablets (≤ 640px)           → e.g. iPad Mini, Galaxy Tab
+    * laptop  - Small Laptops (≤ 1024px)    → e.g. 13" screens, MacBook Air
+    * desktop - Desktops (≥ 1280px)         → e.g. Full HD monitors and up
+    *
+    * These breakpoints guide media queries and layout adjustments
+    * to maintain usability, readability, and design integrity
+    * across all screen sizes.
+    */
+    --breakpoint-sphone: {'raw': '(max-width: 359px)'};
+    --breakpoint-phone: 360px;
+    --breakpoint-tablet: 640px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1280px;
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+    --color-primary-foreground: var(--primary-foreground);
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+    --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+    --color-muted-foreground: var(--muted-foreground);
 
-  --color-sidebar: var(--sidebar-background);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --color-brand-background: var(--color-white);
+    --color-brand-foreground: var(--color-black);
+    --color-brand-surface: var(--color-gray);
+    --color-brand-text: var(--color-black);
+
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 3.9%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(0 0% 3.9%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(0 0% 3.9%);
+    --primary: hsl(0 0% 9%);
+    --primary-foreground: hsl(0 0% 98%);
+    --secondary: hsl(0 0% 92.1%);
+    --secondary-foreground: hsl(0 0% 9%);
+    --muted: hsl(0 0% 96.1%);
+    --muted-foreground: hsl(0 0% 45.1%);
+    --accent: hsl(0 0% 96.1%);
+    --accent-foreground: hsl(0 0% 9%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 92.8%);
+    --input: hsl(0 0% 89.8%);
+    --ring: hsl(0 0% 3.9%);
+    --chart-1: hsl(12 76% 61%);
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+    --radius: 0.5rem;
+    --sidebar-background: hsl(0 0% 98%);
+    --sidebar-foreground: hsl(240 5.3% 26.1%);
+    --sidebar-primary: hsl(0 0% 10%);
+    --sidebar-primary-foreground: hsl(0 0% 98%);
+    --sidebar-accent: hsl(0 0% 94%);
+    --sidebar-accent-foreground: hsl(0 0% 30%);
+    --sidebar-border: hsl(0 0% 91%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --sidebar: hsl(0 0% 98%);
+}
+
+.dark {
+    /* ------------------------------------------------------------
+    * Color Palette Dark
+    * Defines the core color variables for the design system
+    * Enables consistent and centralized usage of colors across the UI
+    * All values use HEX for clarity and flexibility
+    * ------------------------------------------------------------ */
+    --color-brand-background: var(--color-black);
+    --color-brand-foreground: var(--color-gray);
+    --color-brand-surface: color-mix(in srgb, var(--color-black) 30%, transparent);
+    --color-brand-text: var(--color-white);
+
+    --background: hsl(0 0% 3.9%);
+    --foreground: hsl(0 0% 98%);
+    --card: hsl(0 0% 3.9%);
+    --card-foreground: hsl(0 0% 98%);
+    --popover: hsl(0 0% 3.9%);
+    --popover-foreground: 0 0% 98%;
+    --primary: hsl(0 0% 98%);
+    --primary-foreground: hsl(0 0% 9%);
+    --secondary: hsl(0 0% 14.9%);
+    --secondary-foreground: hsl(0 0% 98%);
+    --muted: hsl(0 0% 16.08%);
+    --muted-foreground: hsl(0 0% 63.9%);
+    --accent: hsl(0 0% 14.9%);
+    --accent-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 14.9%);
+    --input: hsl(0 0% 14.9%);
+    --ring: hsl(0 0% 83.1%);
+    --chart-1: hsl(220 70% 50%);
+    --chart-2: hsl(160 60% 45%);
+    --chart-3: hsl(30 80% 55%);
+    --chart-4: hsl(280 65% 60%);
+    --chart-5: hsl(340 75% 55%);
+    --sidebar-background: hsl(0 0% 7%);
+    --sidebar-foreground: hsl(0 0% 95.9%);
+    --sidebar-primary: hsl(360, 100%, 100%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(0 0% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(0 0% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --sidebar: hsl(240 5.9% 10%);
 }
 
 /*
@@ -69,119 +237,119 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
+    @font-face {
+        font-family: JF Flate;
+        font-style: normal;
+        font-display: swap;
+        src:
+            local('JfFlate'),
+            url(../fonts/jflate/regular.ttf) format('truetype');
+    }
 
-@layer utilities {
-  body,
-  html {
-    --font-sans:
-      'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
-  }
-}
+    @font-face {
+        font-family: Changa;
+        font-style: normal;
+        font-weight: 200 700;
+        font-display: swap;
+        src:
+            local('changa'),
+            url(../fonts/changa/changa-variable-font.ttf) format('truetype');
+    }
 
-:root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --primary: hsl(0 0% 9%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(0 0% 92.1%);
-  --secondary-foreground: hsl(0 0% 9%);
-  --muted: hsl(0 0% 96.1%);
-  --muted-foreground: hsl(0 0% 45.1%);
-  --accent: hsl(0 0% 96.1%);
-  --accent-foreground: hsl(0 0% 9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 92.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(0 0% 3.9%);
-  --chart-1: hsl(12 76% 61%);
-  --chart-2: hsl(173 58% 39%);
-  --chart-3: hsl(197 37% 24%);
-  --chart-4: hsl(43 74% 66%);
-  --chart-5: hsl(27 87% 67%);
-  --radius: 0.5rem;
-  --sidebar-background: hsl(0 0% 98%);
-  --sidebar-foreground: hsl(240 5.3% 26.1%);
-  --sidebar-primary: hsl(0 0% 10%);
-  --sidebar-primary-foreground: hsl(0 0% 98%);
-  --sidebar-accent: hsl(0 0% 94%);
-  --sidebar-accent-foreground: hsl(0 0% 30%);
-  --sidebar-border: hsl(0 0% 91%);
-  --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar:
-    hsl(0 0% 98%);
-}
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 
-.dark {
-  --background: hsl(0 0% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(0 0% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(0 0% 3.9%);
-  --popover-foreground: 0 0% 98%;
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(0 0% 9%);
-  --secondary: hsl(0 0% 14.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(0 0% 16.08%);
-  --muted-foreground: hsl(0 0% 63.9%);
-  --accent: hsl(0 0% 14.9%);
-  --accent-foreground: hsl(0 0% 98%);
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 14.9%);
-  --input: hsl(0 0% 14.9%);
-  --ring: hsl(0 0% 83.1%);
-  --chart-1: hsl(220 70% 50%);
-  --chart-2: hsl(160 60% 45%);
-  --chart-3: hsl(30 80% 55%);
-  --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%);
-  --sidebar-background: hsl(0 0% 7%);
-  --sidebar-foreground: hsl(0 0% 95.9%);
-  --sidebar-primary: hsl(360, 100%, 100%);
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(0 0% 15.9%);
-  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-border: hsl(0 0% 15.9%);
-  --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  --sidebar:
-    hsl(240 5.9% 10%);
-}
-
-@layer base {
     * {
-        @apply border-border;
+        @apply border-border outline-ring/50;
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans;
+    }
+
+    /* ------------------------------------------------------------
+ * Title (Main Title)
+ * Weight: **Bold**
+ * Usage: The main title of the page or section.
+ */
+    .text-title {
+        @apply text-title-size font-extrabold;
+    }
+
+    /* ------------------------------------------------------------
+ * Head (Secondary Heading)
+ * Weight: **Semi-Bold**
+ * Usage: Subheadings under the main title.
+ */
+    .text-head {
+        @apply text-head-size font-bold;
+    }
+
+    /* ------------------------------------------------------------
+ * Subhead (Subheading)
+ * Weight: **Medium**
+ * Usage: Subheadings that break down sections within the content.
+ */
+    .text-subhead {
+        @apply text-subhead-size font-medium;
+    }
+
+    /* ------------------------------------------------------------
+ * Body (Main Body Text)
+ * Weight: **Regular**
+ * Usage: The primary content text in articles or information pages.
+ */
+    .text-body {
+        @apply text-body-size font-normal;
+    }
+
+    /* ------------------------------------------------------------
+ * Callout (Highlighted Text)
+ * Weight: **Medium**
+ * Usage: Important or highlighted text that needs attention.
+ */
+    .text-callout {
+        @apply text-callout-size font-medium;
+    }
+
+    /* ------------------------------------------------------------
+ * Small Callout (Small Highlighted Text)
+ * Weight: **Regular**
+ * Usage: Small but important notes or alerts.
+ */
+    .text-small-callout {
+        @apply text-small-callout-size font-normal;
+    }
+
+    /* ------------------------------------------------------------
+ * Caption (Caption for Images/Illustrations)
+ * Weight: **Light**
+ * Usage: Descriptive text for images or illustrations.
+ */
+    .text-caption {
+        @apply text-caption-size font-light;
+    }
+
+    /* ------------------------------------------------------------
+ * Small Caption (Very Small Caption)
+ * Weight: **Light**
+ * Usage: Very small descriptive text, often for fine details.
+ */
+    .text-small-caption {
+        @apply text-small-caption-size font-extralight;
     }
 }
 
-/*
-  ---break---
-*/
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+@layer utilities {
+    body,
+    html {
+        --font-sans:
+            'JF Flat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji',
+            'Instrument Sans';
+    }
 }
