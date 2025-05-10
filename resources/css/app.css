@@ -92,7 +92,7 @@
     * to maintain usability, readability, and design integrity
     * across all screen sizes.
     */
-    --breakpoint-sphone: {'raw': '(max-width: 359px)'};
+    --breakpoint-sphone: 180;
     --breakpoint-phone: 360px;
     --breakpoint-tablet: 640px;
     --breakpoint-laptop: 1024px;
