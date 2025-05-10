@@ -8,6 +8,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    /* ------------------------------------------------------------
+    * Typography Scale
+    * Defines custom font-size variables based on a typographic hierarchy
+    * Using rem units instead of px for better scalability and responsiveness
+    * Allows centralized control via the root font size
+    * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
+    * ------------------------------------------------------------ */
     --font-sans:
         var(--font-type), Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
@@ -42,6 +49,48 @@
     --color-error: var(--color-brand-error);
     --color-warning: var(--color-brand-warning);
     --color-info: var(--color-brand-info);
+
+    /* ------------------------------------------------------------
+    * Spacing & Sizing Scale
+    * Defines the core spacing and sizing variables for the design system
+    * Enables consistent layout, padding, margins, raduis and element sizing across the UI
+    * All values are based on a 4px unit and expressed in rem for scalability
+    * ------------------------------------------------------------ */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 0.75rem; /* 12px */
+    --spacing-base: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 2.5rem; /* 40px */
+    --spacing-3xl: 3.5rem; /* 56px */
+    --spacing-4xl: 4rem; /* 64px */
+    --spacing-5xl: 8rem; /* 128px */
+
+    /* ------------------------------------------------------------
+    * Responsive Breakpoints
+    * Defines the core screen size categories used in the design system
+    * Enables adaptive and responsive layouts across different device types
+    * The breakpoints are named semantically (not numerically) for clarity
+    * and are based on common device widths to ensure a consistent UX
+    * ------------------------------------------------------------
+    *
+    * sphone  - Small Phones (>= 359px)      → e.g. iPhone SE
+    * phone   - Standard Phones (≤ 360px)   → e.g. iPhone 14, Android
+    * tablet  - Tablets (≤ 640px)           → e.g. iPad Mini, Galaxy Tab
+    * laptop  - Small Laptops (≤ 1024px)    → e.g. 13" screens, MacBook Air
+    * desktop - Desktops (≥ 1280px)         → e.g. Full HD monitors and up
+    *
+    * These breakpoints guide media queries and layout adjustments
+    * to maintain usability, readability, and design integrity
+    * across all screen sizes.
+    */
+    --breakpoint-sphone: {'raw': '(max-width: 359px)'};
+    --breakpoint-phone: 360px;
+    --breakpoint-tablet: 640px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1280px;
+
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
@@ -85,12 +134,12 @@
 
 :root {
     /* ------------------------------------------------------------
- * Typography Scale
- * Defines custom font-size variables based on a typographic hierarchy
- * Using rem units instead of px for better scalability and responsiveness
- * Allows centralized control via the root font size
- * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
- * ------------------------------------------------------------ */
+    * Typography Scale
+    * Defines custom font-size variables based on a typographic hierarchy
+    * Using rem units instead of px for better scalability and responsiveness
+    * Allows centralized control via the root font size
+    * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
+    * ------------------------------------------------------------ */
     --font-type: JF Flate;
 
     --font-size-title: 1.5rem;
@@ -116,7 +165,6 @@
 * Enables consistent and centralized usage of colors across the UI
 * All values use HEX for clarity and flexibility
 * ------------------------------------------------------------ */
-
     --color-brand-green: #9ada1b;
     --color-brand-red: #ff3c00;
     --color-brand-black: #33363a;
@@ -139,6 +187,9 @@
     --color-brand-error: var(--color-brand-orange);
     --color-brand-warning: var(--color-brand-yallow);
     --color-brand-info: var(--color-brand-blue);
+
+
+
 
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 3.9%);

@@ -219,7 +219,7 @@ const { colors } = useColors();
             <!-- End Typography Section -->
 
             <!-- Start Color Palette Section -->
-            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+            <section class="border-gray mb-xl col-span-4 mt-8 rounded-xl border-1 p-8">
                 <div class="text-head uppercase">Color Palette</div>
                 <div class="text-subhead">
                     It includes brand colors, neutral tones, and semantic roles (such as success, warning, and error) to ensure clarity,
@@ -368,6 +368,164 @@ const { colors } = useColors();
                 </table>
             </section>
             <!-- End Color Palette Section -->
+
+            <!-- Start Color Spacing and Sizing Scale -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Spacing and Sizing Scale</div>
+                <div class="text-subhead">
+                    Is a set of predefined values used to maintain consistent spacing and sizing across UI elements. It ensures a balanced layout by
+                    standardizing the distances between components like text, buttons, and sections, enhancing visual harmony and improving user
+                    interaction.
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Spacing</div>
+                <table class="w-full table-auto text-left text-sm">
+                    <thead class="bg-gray-100 font-semibold text-gray-700 uppercase">
+                        <tr>
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">usage</th>
+                            <th class="px-4 py-3">Value (rem)</th>
+                            <th class="px-4 py-3">Value (px)</th>
+                            <th class="px-4 py-3">Box</th>
+                        </tr>
+                    </thead>
+                    <tbody class="mb-xl text-gray-800">
+                        <!-- Row Template -->
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space xs</td>
+                            <td class="px-4 py-2 text-gray-600">*-xs</td>
+                            <td class="px-4 py-2 text-gray-600">0.25rem</td>
+                            <td class="px-4 py-2 text-gray-600">4px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 0.25rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space sm</td>
+                            <td class="px-4 py-2 text-gray-600">*-sm</td>
+                            <td class="px-4 py-2 text-gray-600">0.5rem</td>
+                            <td class="px-4 py-2 text-gray-600">8px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 0.5rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space md</td>
+                            <td class="px-4 py-2 text-gray-600">*-md</td>
+                            <td class="px-4 py-2 text-gray-600">0.75rem</td>
+                            <td class="px-4 py-2 text-gray-600">12px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 0.75rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space base</td>
+                            <td class="px-4 py-2 text-gray-600">*-base</td>
+                            <td class="px-4 py-2 text-gray-600">1rem</td>
+                            <td class="px-4 py-2 text-gray-600">16px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 1rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space lg</td>
+                            <td class="px-4 py-2 text-gray-600">*-lg</td>
+                            <td class="px-4 py-2 text-gray-600">1.5rem</td>
+                            <td class="px-4 py-2 text-gray-600">24px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 1.5rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space xl</td>
+                            <td class="px-4 py-2 text-gray-600">*-xl</td>
+                            <td class="px-4 py-2 text-gray-600">2rem</td>
+                            <td class="px-4 py-2 text-gray-600">32px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 2rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space 2xl</td>
+                            <td class="px-4 py-2 text-gray-600">*-2xl</td>
+                            <td class="px-4 py-2 text-gray-600">2.5rem</td>
+                            <td class="px-4 py-2 text-gray-600">40px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 2.5rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space 3xl</td>
+                            <td class="px-4 py-2 text-gray-600">*-3xl</td>
+                            <td class="px-4 py-2 text-gray-600">3.5rem</td>
+                            <td class="px-4 py-2 text-gray-600">56px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 3.5rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space 4xl</td>
+                            <td class="px-4 py-2 text-gray-600">*-4xl</td>
+                            <td class="px-4 py-2 text-gray-600">4rem</td>
+                            <td class="px-4 py-2 text-gray-600">64px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 4rem"></div>
+                            </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Space 5xl</td>
+                            <td class="px-4 py-2 text-gray-600">*-5xl</td>
+                            <td class="px-4 py-2 text-gray-600">8rem</td>
+                            <td class="px-4 py-2 text-gray-600">128px</td>
+                            <td class="px-4 py-2">
+                                <div class="h-4 bg-gray-400" style="width: 8rem"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Sizing / Screen</div>
+                <table class="w-full table-auto text-left text-sm">
+                    <thead class=" font-semibold text-gray-700 uppercase bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">Usage</th>
+                            <th class="px-4 py-3">Break Point (px)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="mb-xl text-gray-800">
+                        <!-- Row Template -->
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Sphone</td>
+                            <td class="px-4 py-2 text-gray-600">sphone:*</td>
+                            <td class="px-4 py-2 text-gray-600">>= 395</td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Phone</td>
+                            <td class="px-4 py-2 text-gray-600">phone:*</td>
+                            <td class="px-4 py-2 text-gray-600"><=360</td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Tablet</td>
+                            <td class="px-4 py-2 text-gray-600">tablet:*</td>
+                            <td class="px-4 py-2 text-gray-600"><=640</td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Laptop</td>
+                            <td class="px-4 py-2 text-gray-600">laptop:*</td>
+                            <td class="px-4 py-2 text-gray-600"><=1024</td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 font-medium text-gray-900">Desktop</td>
+                            <td class="px-4 py-2 text-gray-600">desktop:*</td>
+                            <td class="px-4 py-2 text-gray-600"><=1280</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- End Color Spacing and Sizing Scale-->
+
+        
         </div>
     </AppLayout>
 </template>
