@@ -16,39 +16,46 @@
     * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
     * ------------------------------------------------------------ */
     --font-sans:
-        var(--font-type), Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        JF Flate, Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 
-    --text-title-size: var(--font-size-title);
-    --text-head-size: var(--font-size-head);
-    --text-subhead-size: var(--font-size-subhead);
-    --text-body-size: var(--font-size-body);
-    --text-callout-size: var(--font-size-callout);
-    --text-small-callout-size: var(--font-size-small-callout);
-    --text-caption-size: var(--font-size-caption);
-    --text-small-caption-size: var(--font-size-small-caption);
+    --text-title-size: 1.5rem; /* 24px */
+    --text-head-size: 1.25rem; /* 20px */
+    --text-subhead-size: 1rem; /* 16px */
+    --text-body-size: 0.875rem; /* 14px */
+    --text-callout-size: 0.875rem; /* 14px */
+    --text-small-callout-size: 0.75rem; /* 12px */
+    --text-caption-size: 0.75rem; /* 12px */
+    --text-small-caption-size: 0.625rem; /* 10px */
 
-    --color-green: var(--color-brand-green);
-    --color-red: var(--color-brand-red);
-    --color-black: var(--color-brand-black);
-    --color-white: var(--color-brand-white);
-    --color-gray: var(--color-brand-gray);
-    --color-orange: var(--color-brand-orange);
-    --color-yallow: var(--color-brand-yallow);
-    --color-blue: var(--color-brand-blue);
-    --color-primary: var(--color-brand-primary);
-    --color-secondary: var(--color-brand-secondary);
+    /* ------------------------------------------------------------
+    * Color Palette
+    * Defines the primary and secondary color variables for the UI
+    * Provides a unified color system for branding, components, and states
+    * Organized by functional roles (e.g., primary, success, warning, error)
+    * All colors are defined using HEX codes for consistency and control
+    * ------------------------------------------------------------ */
+    --color-green: #9ada1b;
+    --color-red: #ff3c00;
+    --color-black: #33363a;
+    --color-white: #fff;
+    --color-gray: #f4f5f9;
+    --color-orange: #ff5e00;
+    --color-yallow: #ffc009;
+    --color-blue: #009edd;
+    --color-primary: var(--color-green);
+    --color-secondary: var(--color-red);
     --color-background: var(--color-brand-background);
     --color-foreground: var(--color-brand-foreground);
     --color-surface: var(--color-brand-surface);
     --color-text: var(--color-brand-text);
-    --color-accent: var(--color-brand-accent);
+    --color-accent: var(--color-green);
     --color-muted: var(--color-brand-muted);
-    --color-destructive: var(--color-brand-destructive);
-    --color-success: var(--color-brand-success);
-    --color-error: var(--color-brand-error);
-    --color-warning: var(--color-brand-warning);
-    --color-info: var(--color-brand-info);
+    --color-destructive: var(--color-red);
+    --color-success: var(--color-green);
+    --color-error: var(--color-orange);
+    --color-warning: var(--color-yallow);
+    --color-info: var(--color-blue);
 
     /* ------------------------------------------------------------
     * Spacing & Sizing Scale
@@ -133,63 +140,10 @@
 }
 
 :root {
-    /* ------------------------------------------------------------
-    * Typography Scale
-    * Defines custom font-size variables based on a typographic hierarchy
-    * Using rem units instead of px for better scalability and responsiveness
-    * Allows centralized control via the root font size
-    * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
-    * ------------------------------------------------------------ */
-    --font-type: JF Flate;
-
-    --font-size-title: 1.5rem;
-    /* 24px */
-    --font-size-head: 1.25rem;
-    /* 20px */
-    --font-size-subhead: 1rem;
-    /* 16px */
-    --font-size-body: 0.875rem;
-    /* 14px */
-    --font-size-callout: 0.875rem;
-    /* 14px */
-    --font-size-small-callout: 0.75rem;
-    /* 12px */
-    --font-size-caption: 0.75rem;
-    /* 12px */
-    --font-size-small-caption: 0.625rem;
-    /* 10px */
-
-    /* ------------------------------------------------------------
-* Color Palette
-* Defines the core color variables for the design system
-* Enables consistent and centralized usage of colors across the UI
-* All values use HEX for clarity and flexibility
-* ------------------------------------------------------------ */
-    --color-brand-green: #9ada1b;
-    --color-brand-red: #ff3c00;
-    --color-brand-black: #33363a;
-    --color-brand-white: #fff;
-    --color-brand-gray: #f4f5f9;
-    --color-brand-blue: #009edd;
-    --color-brand-yallow: #ffc009;
-    --color-brand-orange: #ff5e00;
-
-    --color-brand-primary: var(--color-brand-green);
-    --color-brand-secondary: var(--color-brand-red);
-    --color-brand-background: var(--color-brand-white);
-    --color-brand-foreground: var(--color-brand-black);
-    --color-brand-surface: var(--color-brand-gray);
-    --color-brand-text: var(--color-brand-black);
-    --color-brand-accent: var(--color-brand-green);
-    --color-brand-muted: color-mix(in srgb, var(--color-brand-black) 30%, transparent);
-    --color-brand-destructive: var(--color-brand-red);
-    --color-brand-success: var(--color-brand-green);
-    --color-brand-error: var(--color-brand-orange);
-    --color-brand-warning: var(--color-brand-yallow);
-    --color-brand-info: var(--color-brand-blue);
-
-
-
+    --color-brand-background: var(--color-white);
+    --color-brand-foreground: var(--color-black);
+    --color-brand-surface: var(--color-gray);
+    --color-brand-text: var(--color-black);
 
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 3.9%);
