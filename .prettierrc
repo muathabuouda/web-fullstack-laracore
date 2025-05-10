@@ -7,12 +7,6 @@
     "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
     "tailwindFunctions": ["clsx", "cn"],
     "tabWidth": 4,
-    "useTabs": false,
-    "bracketSpacing": true,
-    "arrowParens": "avoid",
-    "endOfLine": "lf",
-    "proseWrap": "preserve",
-    "cssWhitespaceSensitivity": "strict",
     "overrides": [
         {
             "files": "**/*.yml",
