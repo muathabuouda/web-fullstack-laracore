@@ -1,0 +1,1 @@
+export { default as LabelComponent } from './display/Label.vue'

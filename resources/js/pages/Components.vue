@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { CardComponent, TextComponent } from '@/components/atoms';
+import { LabelComponent } from '@/components/molecules';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
@@ -100,7 +101,8 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <h3 class="text-xl font-semibold">Props</h3>
                     <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
                         <li>
-                            <strong>border</strong>: Controls border radius – <code>'none'</code>, <code>'default'</code>, <code>'strong'</code>, – default: <code>none</code>
+                            <strong>border</strong>: Controls border radius – <code>'none'</code>, <code>'default'</code>, <code>'strong'</code>, –
+                            default: <code>none</code>
                         </li>
                     </ul>
                 </div>
@@ -123,7 +125,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                         </CardComponent>
                     </div>
                 </div>
-                <div class="space-y-2 mt-6">
+                <div class="mt-6 space-y-2">
                     <h3 class="text-xl font-semibold">Example With Border</h3>
                     <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
                         <p>&lt;CardComponent <span class="text-info"> border="strong"</span>&gt;</p>
@@ -141,6 +143,46 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </section>
             <!-- End Card Component Section -->
+
+            <!-- Start Label Component Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Label Component</div>
+                <div class="text-subhead">
+                    The <code class="rounded bg-gray-100 px-1 py-0.5 text-sm">LabelComponent</code> is used to identify form fields or UI elements
+                    with consistent styling. It supports customization for text size, color, and alignment, and handles required or error states for
+                    accessibility and clarity.
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Props</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Props</h3>
+                    <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+                        <li><strong>for</strong>: The <code>id</code> of the form field this label is associated with – required</li>
+                        <li>
+                            <strong>align</strong>: Text alignment – <code>'left'</code>, <code>'center'</code>, <code>'right'</code>,
+                            <code>'justify'</code> – default: <code>left</code>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Example</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Default Example</h3>
+                    <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                        <p>&lt;LabelComponent for="email" align="left"&gt;</p>
+                        <p class="pl-4">Email Label</p>
+                        <p>&lt;/LabelComponent&gt;</p>
+                        <p>&lt;Input id="email" type="email" required :tabindex="2" autocomplete="email" placeholder="email@example.com"&gt;</p>
+                    </div>
+                    <!-- Live Preview -->
+                    <div class="rounded border bg-white p-4">
+                        <LabelComponent for="email" align="left">Email Label</LabelComponent>
+                        <Input id="email" type="email" required :tabindex="2" autocomplete="email" placeholder="email@example.com" />
+                    </div>
+                </div>
+            </section>
+            <!-- End Label Component Section -->
         </div>
     </AppLayout>
 </template>
