@@ -16,8 +16,7 @@
     * Sizes cover: main title, headings, subheadings, body text, callouts, and captions
     * ------------------------------------------------------------ */
     --font-sans:
-        JF Flate, Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
+        JF Flate, Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
     --text-title-size: 1.5rem; /* 24px */
     --text-head-size: 1.25rem; /* 20px */
@@ -98,7 +97,6 @@
     --breakpoint-laptop: 1024px;
     --breakpoint-desktop: 1280px;
 
-
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
@@ -137,6 +135,13 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+
+
+    /* Miscellaneous */
+    --radius-outer: 2rem; /* 4px */
+    --radius-inner: 1rem; /* 8px */
+
+    --shadow-base: 0 3px 10px color-mix(in srgb, var(--color-black) 15%, transparent);
 }
 
 :root {
@@ -273,75 +278,86 @@
     }
 
     /* ------------------------------------------------------------
- * Title (Main Title)
- * Weight: **Bold**
- * Usage: The main title of the page or section.
- */
+    * Title (Main Title)
+    * Weight: **Bold**
+    * Usage: The main title of the page or section.
+    */
     .text-title {
         @apply text-title-size font-extrabold;
     }
 
     /* ------------------------------------------------------------
- * Head (Secondary Heading)
- * Weight: **Semi-Bold**
- * Usage: Subheadings under the main title.
- */
+    * Head (Secondary Heading)
+    * Weight: **Semi-Bold**
+    * Usage: Subheadings under the main title.
+    */
     .text-head {
         @apply text-head-size font-bold;
     }
 
     /* ------------------------------------------------------------
- * Subhead (Subheading)
- * Weight: **Medium**
- * Usage: Subheadings that break down sections within the content.
- */
+    * Subhead (Subheading)
+    * Weight: **Medium**
+    * Usage: Subheadings that break down sections within the content.
+    */
     .text-subhead {
-        @apply text-subhead-size font-medium;
+        @apply text-subhead-size font-bold;
     }
 
     /* ------------------------------------------------------------
- * Body (Main Body Text)
- * Weight: **Regular**
- * Usage: The primary content text in articles or information pages.
- */
+    * Body (Main Body Text)
+    * Weight: **Regular**
+    * Usage: The primary content text in articles or information pages.
+    */
     .text-body {
         @apply text-body-size font-normal;
     }
 
     /* ------------------------------------------------------------
- * Callout (Highlighted Text)
- * Weight: **Medium**
- * Usage: Important or highlighted text that needs attention.
- */
+    * Callout (Highlighted Text)
+    * Weight: **Medium**
+    * Usage: Important or highlighted text that needs attention.
+    */
     .text-callout {
         @apply text-callout-size font-medium;
     }
 
     /* ------------------------------------------------------------
- * Small Callout (Small Highlighted Text)
- * Weight: **Regular**
- * Usage: Small but important notes or alerts.
- */
+    * Small Callout (Small Highlighted Text)
+    * Weight: **Regular**
+    * Usage: Small but important notes or alerts.
+    */
     .text-small-callout {
         @apply text-small-callout-size font-normal;
     }
 
     /* ------------------------------------------------------------
- * Caption (Caption for Images/Illustrations)
- * Weight: **Light**
- * Usage: Descriptive text for images or illustrations.
- */
+    * Caption (Caption for Images/Illustrations)
+    * Weight: **Light**
+    * Usage: Descriptive text for images or illustrations.
+    */
     .text-caption {
         @apply text-caption-size font-light;
     }
 
     /* ------------------------------------------------------------
- * Small Caption (Very Small Caption)
- * Weight: **Light**
- * Usage: Very small descriptive text, often for fine details.
- */
+    * Small Caption (Very Small Caption)
+    * Weight: **Light**
+    * Usage: Very small descriptive text, often for fine details.
+    */
     .text-small-caption {
         @apply text-small-caption-size font-extralight;
+    }
+
+    /* ------------------------------------------------------------
+    * Card (Basic Container)
+    * Radius: **Inner**
+    * Padding: **base**
+    * Background: **Surface**
+    * Usage: General content container with consistent style.
+    */
+    .card {
+        @apply bg-surface shadow-base rounded-inner p-base transition duration-200 ease-in-out;
     }
 }
 

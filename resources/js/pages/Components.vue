@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { CardComponent, TextComponent } from '@/components/atoms';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
-import { TextComponent } from '@/components/atoms';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -36,7 +36,9 @@ const breadcrumbs: BreadcrumbItem[] = [
                         </li>
                         <li><strong>size</strong>: Text size – <code>'xs'</code> to <code>'4xl'</code> – default: <code>base</code></li>
                         <li>
-                            <strong>cstyle</strong>: Text Custom Style – <code>'title'</code>, <code>'head'</code>, <code>'subhead'</code>, <code>'body'</code>, <code>'callout'</code>, <code>'small-callout'</code>, <code>'caption'</code>, <code>'small-caption'</code>, default:
+                            <strong>cstyle</strong>: Text Custom Style – <code>'title'</code>, <code>'head'</code>, <code>'subhead'</code>,
+                            <code>'body'</code>, <code>'callout'</code>, <code>'small-callout'</code>, <code>'caption'</code>,
+                            <code>'small-caption'</code>, default:
                             <code>body</code>
                         </li>
                         <li>
@@ -66,7 +68,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                         </TextComponent>
                     </div>
                 </div>
-                <div class="space-y-2 mt-6">
+                <div class="mt-6 space-y-2">
                     <h3 class="text-xl font-semibold">Example Using A Predefined Custom Style</h3>
                     <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
                         <p>&lt;TextComponent tag="h1" <span class="text-info">cstyle="title"</span> color="red" align="left"&gt;</p>
@@ -83,6 +85,62 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </section>
             <!-- End Text Component Section -->
+
+            <!-- Start Card Component Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Card Component</div>
+                <div class="text-subhead">
+                    The <code class="rounded bg-gray-100 px-1 py-0.5 text-sm">CardComponent</code> is a flexible container used to display content
+                    with customizable padding, radius, shadow, and background color. It's designed for consistent layout and visual structure.
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Props</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Props</h3>
+                    <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+                        <li>
+                            <strong>border</strong>: Controls border radius – <code>'none'</code>, <code>'default'</code>, <code>'strong'</code>, – default: <code>none</code>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Example</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Default Example</h3>
+                    <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                        <p>&lt;CardComponent&gt;</p>
+                        <p class="pl-4">&lt;TextComponent cstyle="subhead"&gt;Card Title&lt;/TextComponent&gt;</p>
+                        <p class="pl-4">&lt;TextComponent color="muted"&gt;Card content goes here.&lt;/TextComponent&gt;</p>
+                        <p>&lt;/CardComponent&gt;</p>
+                    </div>
+                    <!-- Live Preview -->
+                    <div class="rounded border bg-white p-4">
+                        <CardComponent>
+                            <TextComponent size="lg" weight="semibold">Card Title</TextComponent>
+                            <TextComponent size="base" color="muted">Card content goes here.</TextComponent>
+                        </CardComponent>
+                    </div>
+                </div>
+                <div class="space-y-2 mt-6">
+                    <h3 class="text-xl font-semibold">Example With Border</h3>
+                    <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                        <p>&lt;CardComponent <span class="text-info"> border="strong"</span>&gt;</p>
+                        <p class="pl-4">&lt;TextComponent cstyle="subhead"&gt;Card Title&lt;/TextComponent&gt;</p>
+                        <p class="pl-4">&lt;TextComponent color="muted"&gt;Card content goes here.&lt;/TextComponent&gt;</p>
+                        <p>&lt;/CardComponent&gt;</p>
+                    </div>
+                    <!-- Live Preview -->
+                    <div class="rounded border bg-white p-4">
+                        <CardComponent border="strong">
+                            <TextComponent cstyle="subhead">Card Title</TextComponent>
+                            <TextComponent color="muted">Card content goes here.</TextComponent>
+                        </CardComponent>
+                    </div>
+                </div>
+            </section>
+            <!-- End Card Component Section -->
         </div>
     </AppLayout>
 </template>
