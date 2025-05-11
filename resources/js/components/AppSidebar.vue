@@ -19,6 +19,11 @@ const mainNavItems: NavItem[] = [
         href: '/design-pattern',
         icon: BookOpen,
     },
+    {
+        title: 'Components Library',
+        href: '/components-library',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
