@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { CardComponent, TextComponent } from '@/components/atoms';
-import { LabelComponent } from '@/components/molecules';
+import { IconComponent, LabelComponent } from '@/components/molecules';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
+import { icons } from '@/components/molecules/display/icon/icons';
+import { IconsMap } from '@/types/components/icon';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -183,6 +185,58 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </section>
             <!-- End Label Component Section -->
+
+            <!-- Start Icon Component Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Icon Component</div>
+                <div class="text-subhead">
+                    The <code class="rounded bg-gray-100 px-1 py-0.5 text-sm">IconComponent</code> dynamically renders SVG icons based on a provided
+                    name, variant, and subvariant. It supports tree-shaking by loading only the used icons at runtime using
+                    <code>defineAsyncComponent</code>.
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Props</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Props</h3>
+                    <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+                        <li><strong>name</strong>: Icon name (e.g., <code>'user'</code>, <code>'home'</code>) – required</li>
+                        <li>
+                            <strong>variant</strong>: Icon variant (e.g., <code>'regular'</code>, <code>'bold'</code>) – default:
+                            <code>'regular'</code>
+                        </li>
+                        <li>
+                            <strong>subvariant</strong>: Sub-style of the icon (e.g., <code>'broken'</code>, <code>'solid'</code>) – default:
+                            <code>'solid'</code>
+                        </li>
+                        <li><strong>class</strong>: Custom classes to style size, color, etc. – optional</li>
+                    </ul>
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Example</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Default Example</h3>
+                    <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                        <p>&lt;IconComponent name="add" variant="regular" subvariant="broken" class="fill-primary h-6 w-6" /&gt;</p>
+                    </div>
+                    <!-- Live Preview -->
+                    <div class="rounded border bg-white p-4">
+                        <IconComponent name="add" variant="regular" subvariant="broken" class="fill-primary h-6 w-6" />
+                    </div>
+                </div>
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Available Icons</div>
+                <div class="gap-base grid grid-cols-8">               
+                    <div v-for="(icon, key) in icons" class="bg-gray p-lg h-fit">
+                        <div class="mb-sm flex justify-end">
+                            <IconComponent :name="key" variant="regular" subvariant="broken" class="h-xl w-xl" />
+                        </div>
+                        <TextComponent class="mb-0"> {{ key }} </TextComponent>
+                    </div>
+                </div>
+            </section>
+            <!-- End Icon Component Section -->
         </div>
     </AppLayout>
 </template>
