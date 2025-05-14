@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { CardComponent, TextComponent } from '@/components/atoms';
-import { IconComponent, LabelComponent } from '@/components/molecules';
+import { BadgeComponent, IconComponent, LabelComponent } from '@/components/molecules';
+import { icons } from '@/components/molecules/display/icon/icons';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
-import { icons } from '@/components/molecules/display/icon/icons';
-import { IconsMap } from '@/types/components/icon';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -227,7 +226,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
                 <hr class="mt-6 mb-2" />
                 <div class="text-callout mb-4 uppercase opacity-50">Available Icons</div>
-                <div class="gap-base grid grid-cols-8">               
+                <div class="gap-base grid grid-cols-8">
                     <div v-for="(icon, key) in icons" class="bg-gray p-lg h-fit">
                         <div class="mb-sm flex justify-end">
                             <IconComponent :name="key" variant="regular" subvariant="broken" class="h-xl w-xl" />
@@ -237,6 +236,124 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </section>
             <!-- End Icon Component Section -->
+
+            <!-- Start Badge Component Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Badge Component</div>
+                <div class="text-subhead">
+                    The <code class="rounded bg-gray-100 px-1 py-0.5 text-sm">Badge</code> component is used to display status indicators or
+                    contextual labels. It supports different <code>status</code> values that automatically apply suitable background and text colors.
+                    You can use it with plain text, icons, or both.
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Props</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Props</h3>
+                    <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+                        <li><strong>text</strong>: Optional text to be displayed inside the badge</li>
+                        <li>
+                            <strong>status</strong>: Controls background and text color. Acceptable values: <code>'Primary'</code>,
+                            <code>'Secondary'</code>, <code>'Success'</code>, <code>'Info'</code>, <code>'Warning'</code>, <code>'Destructive'</code>,
+                            <code>'Accent'</code>, <code>'Muted'</code> – default: <code>'info'</code>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Example</div>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold">Full Badge</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>import { IconComponent } from '@/components/molecules';</p>
+                            <br />
+                            <p>&lt;BadgeComponent icon="category" text="Primary" status="primary" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="chart-line" text="Secondary" status="secondary" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="done-square" text="Success" status="success" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="edit-box" text="Info" status="info" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="info-sequare" text="Warning" status="warning" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="trash" text="Destructive" status="destructive" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="message" text="Accent" status="accent" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="message" text="Muted" status="muted" /&gt;</p>
+                        </div>
+                        <div class="space-x-base rounded border bg-white p-4">
+                            <BadgeComponent icon="category" text="Primary" status="primary" />
+                            <BadgeComponent icon="chart-line" text="Secondary" status="secondary" />
+                            <BadgeComponent icon="done-square" text="Success" status="success" />
+                            <BadgeComponent icon="edit-box" text="Info" status="info" />
+                            <BadgeComponent icon="info-sequare" text="Warning" status="warning" />
+                            <BadgeComponent icon="trash" text="Destructive" status="destructive" />
+                            <BadgeComponent icon="message" text="Accent" status="accent" />
+                            <BadgeComponent icon="message" text="Muted" status="muted" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Text Badge</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>import { IconComponent } from '@/components/molecules';</p>
+                            <br />
+                            <p>&lt;BadgeComponent text="Primary" status="primary" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Secondary" status="secondary" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Success" status="success" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Info" status="info" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Warning" status="warning" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Destructive" status="destructive" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Accent" status="accent" /&gt;</p>
+                            <p>&lt;BadgeComponent text="Muted" status="muted" /&gt;</p>
+                        </div>
+                        <div class="space-x-base rounded border bg-white p-4">
+                            <BadgeComponent text="Primary" status="primary" />
+                            <BadgeComponent text="Secondary" status="secondary" />
+                            <BadgeComponent text="Success" status="success" />
+                            <BadgeComponent text="Info" status="info" />
+                            <BadgeComponent text="Warning" status="warning" />
+                            <BadgeComponent text="Destructive" status="destructive" />
+                            <BadgeComponent text="Accent" status="accent" />
+                            <BadgeComponent text="Muted" status="muted" />
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Icon Badge</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>import { IconComponent } from '@/components/molecules';</p>
+                            <br />
+                            <p>&lt;BadgeComponent icon="category" status="primary" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="chart-line" status="secondary" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="done-square" status="success" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="edit-box" status="info" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="info-sequare" status="warning" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="trash" status="destructive" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="message" status="accent" /&gt;</p>
+                            <p>&lt;BadgeComponent icon="message" status="muted" /&gt;</p>
+                        </div>
+                        <div class="space-x-base rounded border bg-white p-4">
+                            <BadgeComponent icon="category" status="primary" />
+                            <BadgeComponent icon="chart-line" status="secondary" />
+                            <BadgeComponent icon="done-square" status="success" />
+                            <BadgeComponent icon="edit-box" status="info" />
+                            <BadgeComponent icon="info-sequare" status="warning" />
+                            <BadgeComponent icon="trash" status="destructive" />
+                            <BadgeComponent icon="message" status="accent" />
+                            <BadgeComponent icon="message" status="muted" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Empty Badge</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>import { IconComponent } from '@/components/molecules';</p>
+                            <br />
+                            <p>&lt;BadgeComponent/&gt;</p>
+                        </div>
+                        <div class="space-x-base rounded border bg-white p-4">
+                            <BadgeComponent />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Badge Component Section -->
         </div>
     </AppLayout>
 </template>

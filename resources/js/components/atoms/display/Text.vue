@@ -6,7 +6,7 @@ type Size = keyof typeof sizeClasses;
 type Style = keyof typeof customStyleClasses;
 type Weight = keyof typeof weightClasses;
 type Align = keyof typeof alignClasses;
-type Color = keyof typeof colorClasses;
+export type Color = keyof typeof colorClasses;
 
 const props = defineProps({
     tag: {
