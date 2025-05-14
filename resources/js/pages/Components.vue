@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { CardComponent, TextComponent } from '@/components/atoms';
-import { BadgeComponent, IconComponent, LabelComponent } from '@/components/molecules';
+import { BadgeComponent, IconComponent, ImageComponent, LabelComponent } from '@/components/molecules';
 import { icons } from '@/components/molecules/display/icon/icons';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
@@ -354,6 +354,65 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </section>
             <!-- End Badge Component Section -->
+
+            <!-- Start Image Component Section -->
+            <section class="border-gray col-span-4 mt-8 rounded-xl border-1 p-8">
+                <div class="text-head uppercase">Image Component</div>
+                <div class="text-subhead">
+                    The <code class="rounded bg-gray-100 px-1 py-0.5 text-sm">ImageComponent</code> is a responsive image display component. It fills
+                    the container it’s placed in, automatically adjusts to its size, and supports a loading state with a pulsing animation to improve
+                    user experience. Optional props include rounded display and loading color.
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Props</div>
+                <div class="space-y-2">
+                    <h3 class="text-xl font-semibold">Props</h3>
+                    <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+                        <li><strong>src</strong>: <span class="italic">required</span> – the image source URL.</li>
+                        <li><strong>alt</strong>: Optional alternative text for accessibility.</li>
+                        <li><strong>title</strong>: Optional title that appears on hover and improves SEO.</li>
+                        <li><strong>classes</strong>: Optional custom classes to apply directly to the image element.</li>
+                    </ul>
+                </div>
+
+                <hr class="mt-6 mb-2" />
+                <div class="text-callout mb-4 uppercase opacity-50">Usage Example</div>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold">Default Image</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>
+                                &lt;ImageComponent src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsbmTZu_uMrmJ0z--CrG-o1UIXytu1OCizQ&s"
+                                alt="Sample" title="Avatar Image" classes="h-5xl w-5xl"&gt;
+                            </p>
+                        </div>
+                        <ImageComponent
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsbmTZu_uMrmJ0z--CrG-o1UIXytu1OCizQ&s"
+                            alt="Sample"
+                            title="Bird Image"
+                            classes="h-5xl w-5xl"
+                        />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Avatar Image</h3>
+                        <div class="space-y-2 rounded border bg-gray-50 p-4 text-sm text-gray-800">
+                            <p>
+                                &lt;ImageComponent src="/storage/assets/images/people.jpg" alt="Avatar Image" title="Avatar Image" classes="h-5xl
+                                w-5xl rounded-full"/&gt;
+                            </p>
+                        </div>
+                        <ImageComponent
+                            src="/storage/assets/images/people.jpg"
+                            alt="Avatar Image"
+                            title="Avatar Image"
+                            classes="h-5xl w-5xl rounded-full"
+                        />
+                    </div>
+                </div>
+            </section>
+            <!-- End Image Component Section -->
         </div>
     </AppLayout>
 </template>
