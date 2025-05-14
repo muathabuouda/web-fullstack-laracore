@@ -227,7 +227,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                 <hr class="mt-6 mb-2" />
                 <div class="text-callout mb-4 uppercase opacity-50">Available Icons</div>
                 <div class="gap-base grid grid-cols-8">
-                    <div v-for="(icon, key) in icons" class="bg-gray p-lg h-fit">
+                    <div v-for="(icon, key) in icons" :key="key" class="bg-gray p-lg h-fit">
                         <div class="mb-sm flex justify-end">
                             <IconComponent :name="key" variant="regular" subvariant="broken" class="h-xl w-xl" />
                         </div>

@@ -55,9 +55,9 @@ const tagSpacingClass = computed(() => {
 
 const computedClasses = computed(() => [
     'leading-relaxed',
-    computedSize ? sizeClasses[computedSize.value] : '',
+    computedSize.value ? sizeClasses[computedSize.value] : '',
     props.cstyle ? customStyleClasses[props.cstyle] : '',
-    computedWeight ? weightClasses[computedWeight.value] : '',
+    computedWeight.value ? weightClasses[computedWeight.value] : '',
     alignClasses[props.align],
     colorClasses[props.color],
     tagSpacing[tagSpacingClass.value as keyof typeof tagSpacing] ?? 'mb-2',

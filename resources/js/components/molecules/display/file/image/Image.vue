@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ImageComponentProps } from '@/types/components/image';
-import { ref, watch, computed } from 'vue';
+import { ref, watch } from 'vue';
 
 const { src, alt, title, classes } = defineProps<ImageComponentProps>();
 
@@ -12,6 +12,7 @@ watch(
         isLoaded.value = false;
     },
 );
+
 </script>
 
 <template>
